@@ -19,8 +19,18 @@ def divide(x, y)
 end
 
 def power(x, y)
-  result = x ** y
-  puts "The result is #{result}"
+  z = []
+  i = 0
+  while i < y
+    z << x
+    i += 1
+  end
+  c = 1
+  while c < y
+    z[c] = x * z[c - 1]
+    c += 1
+  end
+  puts "The result is #{z[y - 1]}"
 end
 
 def calc(a, b, c)
@@ -48,14 +58,14 @@ Please enter the operation that you want to perform. Enter:
 c = gets.chomp.to_i
 
 if c == 5
-  puts "Please enter the number:"
+  puts 'Please enter the number:'
   a = gets.chomp.to_f
-  puts "Please enter the power:"
-  b = gets.chomp.to_f
+  puts 'Please enter the power:'
+  b = gets.chomp.to_i
 else
-  puts "Please enter the first number:"
+  puts 'Please enter the first number:'
   a = gets.chomp.to_f
-  puts "Please enter the second number:"
+  puts 'Please enter the second number:'
   b = gets.chomp.to_f
 end
 
