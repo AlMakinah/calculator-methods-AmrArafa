@@ -19,18 +19,13 @@ def divide(x, y)
 end
 
 def power(x, y)
-  z = []
   i = 0
+  result = 1
   while i < y
-    z << x
+    result = result * x
     i += 1
   end
-  c = 1
-  while c < y
-    z[c] = x * z[c - 1]
-    c += 1
-  end
-  puts "The result is #{z[y - 1]}"
+  puts "The result is #{result}"
 end
 
 def calc(a, b, c)
